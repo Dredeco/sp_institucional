@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import Header from '@/components/Header'
 
 export const metadata: Metadata = {
-  title: "Apaixonado por tecnologia - Sujeito Programador"
+  title: "Blog | Sujeito Programador"
 }
 
 export default function RootLayout({

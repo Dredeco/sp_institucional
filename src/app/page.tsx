@@ -8,6 +8,7 @@ import styled from 'styled-components'
 import HeroImage from '../../public/images/banner-conteudos.png'
 import SectionImage from '../../public/images/financasApp.png'
 import SectionImage2 from '../../public/images/webDev.png'
+import TechImage from '../../public/images/techs.svg'
 
 const HomeContainer = styled.main`
   display: block;
@@ -25,6 +26,7 @@ const HomeContent = styled.div`
   max-height: calc(100vh - 6rem);
   margin: 0 auto;
   max-width: 1120px;
+  padding: 0 2%;
 
   display: flex;
   align-items: center;
@@ -81,6 +83,7 @@ const SectionContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 2%;
 
   section {
     max-width: 600px;
@@ -112,6 +115,45 @@ const SectionContent = styled.div`
   }
 `
 
+const NextLevelContent = styled.div`
+  max-width: 1120px;
+  margin: 6rem auto;
+  padding: 0 2%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+
+  h2 {
+    font-size: 2.8rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+    color: var(--white);
+
+    span {
+      font-size: 2.8rem;
+      line-height: 4.5rem;
+      font-weight: 900;
+      color: var(--blue-900);
+    }
+  }
+
+  span {
+    font-size: 1rem;
+    line-height: 2.25rem;
+    color: var(--white);
+  }
+
+  a {
+    background-color: var(--blue-900);
+    border: 0;
+    padding: 1rem 1.8rem;
+    margin-top: 2.5rem;
+    border-radius: 6px;
+    color: var(--white);
+    font-weight: bold;
+  }
+`
 
 
 export default function Home() {
@@ -163,8 +205,19 @@ export default function Home() {
             <h2>Aprenda a criar sistemas web</h2>
             <span>Crie sistemas web e sites usando as tecnologias mais modernas e requisistadas pelo mercado.</span>
           </section>
-
         </SectionContent>
+
+        <NextLevelContent>
+          <Image 
+            src={TechImage}
+            alt='Tecnologia'
+          />
+          <h2>Mais de <span>15 mil</span> alunos já levaram sua carreira ao próximo nível!</h2>
+          <span>E você? Vai perder a chance de evoluir de uma vez por todas?</span>
+          <Link href='/'>
+            ACESSAR TURMA
+          </Link>
+        </NextLevelContent>
 
       </HomeContainer>
     </>
