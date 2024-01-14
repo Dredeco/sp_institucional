@@ -9,6 +9,9 @@ import HeroImage from '../../public/images/banner-conteudos.png'
 import SectionImage from '../../public/images/financasApp.png'
 import SectionImage2 from '../../public/images/webDev.png'
 import TechImage from '../../public/images/techs.svg'
+import { GetStaticProps } from 'next'
+import { createClient } from '@/prismicio'
+import { useEffect } from 'react'
 
 const HomeContainer = styled.main`
   display: block;
@@ -155,8 +158,19 @@ const NextLevelContent = styled.div`
   }
 `
 
-
 export default function Home() {
+
+  useEffect(() => {
+    const getData = async () => {
+      const prismic = createClient();
+  
+      const response = await prismic.getByType('home')
+    
+      console.log(response)
+    }
+    getData()
+  })
+
   return (
     <>
       <Head>
